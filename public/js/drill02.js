@@ -19,5 +19,13 @@ drill02 - 配列
 // console.log(`[${array[1]}]`);
 
 let array = []
+console.log(array);
 
+array.push(200)
+console.log(array);
+
+array.push(300);
+console.log(array);
+
+array.shift(200);
 console.log(array);

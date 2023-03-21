@@ -16,4 +16,30 @@ drill04 - 消費税の出力
 
 */
 
+const pr = document.getElementById('pr');
+const re = document.getElementById('re');
 
+console.log(pr, re);
+
+pr.addEventListener('blur', () => {
+    let num = parseInt(pr.value);
+    let result = Math.sign(num)
+    console.log(result);
+    if (result === 1) {
+        let calc = num * 0.1;
+        re.textContent = num + calc
+        re.style.color = '#000'
+    }
+    else if (result === -1) {
+        re.textContent = '有効な数値を入力してください'
+        re.style.color = 'tomato'
+    }
+    else if (result === 0 || -0) {
+        re.textContent = '0では計算できません'
+        re.style.color = 'tomato'
+    }
+    else {
+        re.textContent = '数値を入力してください'
+        re.style.color = 'tomato'
+    }
+})
